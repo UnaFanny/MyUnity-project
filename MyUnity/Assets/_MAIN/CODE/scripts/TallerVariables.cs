@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-public class tallervariables : MonoBehaviour
+public class TallerVariables : MonoBehaviour
 {
     [Header("Variables C#")]
 
@@ -12,7 +12,7 @@ public class tallervariables : MonoBehaviour
     [SerializeField]
     private int nivel = 29;
 
-    public string nombre = "Stefany";
+    public string nombre = "Dazai";
     [SerializeField]
     private float tiempo = 60.5f;
     [SerializeField]
@@ -50,7 +50,23 @@ public class tallervariables : MonoBehaviour
         estaVivotext.text = "Esta Vivo: " + isAlive;
         //Le voy a dar un valor a nuestras variables de texto = cadena texto + variables
 
-
+        if (isAlive == true)
+        {
+            Debug.Log("Estoy vivo UwU");
+        }
+        else
+        {
+            Debug.Log("Estoy muerto X.X");
+        }
+        if (nombre == "Dazai")
+        {
+            Debug.Log("Hola Dazai :D");
+        }
+        else
+        {
+            Debug.Log("Hola señor");
+        }
+        if
 
     }
 

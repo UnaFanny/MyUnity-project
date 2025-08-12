@@ -556,6 +556,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab6a8c3106af3b3409a2b6f11aff9e88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vida: 1
+  puntaje: 200
+  nivel: 29
+  nombre: Dazai
+  tiempo: 60.5
+  isAlive: 1
+  nombreText: {fileID: 21755861}
+  vidaText: {fileID: 684898852}
+  tiempoText: {fileID: 1779280781}
+  puntostext: {fileID: 90249950}
+  estaVivotext: {fileID: 238346389}
 --- !u!224 &301155758
 RectTransform:
   m_ObjectHideFlags: 0
