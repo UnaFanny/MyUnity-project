@@ -66,7 +66,7 @@ public class TallerVariables : MonoBehaviour
         {
             Debug.Log("Hola señor");
         }
-        if
+       
 
     }
 

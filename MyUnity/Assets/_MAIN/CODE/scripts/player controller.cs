@@ -1,19 +1,43 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class playercontrol : MonoBehaviour
 {
+    [SerializeField]
+    private Rigidbody2D rb2d;
+
+    [SerializeField]
+    private Vector2 direccion = new Vector2(1f, 3f);
+    [SerializeField]
+    private float fuerzaDeSalto = 200f;
+
+    private void Awake()
+    {
+        rb2d = GetComponent<Rigidbody2D>();
+
+
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown(KeyCode))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
 
+            rb2d.AddForce(direccion * fuerzaDeSalto);
+
+        }
+        else
+        {
+            print("No oprimir la tecla Space");
         }
     }
 }
+
+
+
