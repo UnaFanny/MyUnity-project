@@ -7,7 +7,7 @@ public class playercontrol : MonoBehaviour
     private Rigidbody2D rb2d;
 
     [SerializeField]
-    private Vector2 direccion = new Vector2(1f, 3f);
+    private Vector2 direccion = new Vector2(0.5f, 0.5f);
     [SerializeField]
     private float fuerzaDeSalto = 200f;
 
