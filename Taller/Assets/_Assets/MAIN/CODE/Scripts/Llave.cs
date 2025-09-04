@@ -1,15 +1,16 @@
 using UnityEngine;
 
-public class Tiempo : MonoBehaviour
+public class Llave : MonoBehaviour
 {
     [SerializeField]
     private GameManage gameManage;
 
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            gameManage.SumarTiempo(10);
+            gameManage.TomarLlave();
             Destroy(this.gameObject);
         }
     }
