@@ -31,6 +31,8 @@ public class GameManage : MonoBehaviour
     private TMP_Text tiempoText;
     [SerializeField]
     private TMP_Text llavetext;
+    [SerializeField]
+    private TMP_Text mensajeFinaltext;
 
     void Start()
     {
@@ -38,13 +40,10 @@ public class GameManage : MonoBehaviour
         tiempoText.text = "Tiempo: " + _tiempo;
         puntosText.text = "Puntos: " + _puntos;
         llavetext.text = "Llave: " + _Llave;
+        mensajeFinaltext.text = "";
     }
 
-    public void TomarLlave()
-    {
-        _Llave = true;
-        llavetext.text = "Llave: " + _Llave;
-    }
+   
     private void Update()
     {
 
@@ -61,7 +60,7 @@ public class GameManage : MonoBehaviour
         {
             SceneManager.LoadScene(1);
         }
-        if (_puntos >= 1 && Obstaculo != null)
+        if (_puntos >= 10 && Obstaculo != null)
         {
             Destroy(Obstaculo);
             Obstaculo = null;
@@ -101,5 +100,22 @@ public class GameManage : MonoBehaviour
 
     }
 
+    public void TomarLlave()
+    {
+        _Llave = true;
+        llavetext.text = "Llave: " + _Llave;
 
+    }
+    public void LlegarAPuerta()
+    {
+        if (_Llave)
+        {
+            mensajeFinaltext.text = "¡GANASTE!";
+            Time.timeScale = 0f; 
+        }
+        else
+        {
+            Debug.Log("Necesitas la llave para entrar.");
+        }
+    }
 }

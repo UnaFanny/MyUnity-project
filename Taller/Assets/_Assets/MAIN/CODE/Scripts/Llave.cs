@@ -8,10 +8,10 @@ public class Llave : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
             gameManage.TomarLlave();
-            Destroy(this.gameObject);
+            Destroy(gameObject); // la llave desaparece
         }
     }
 }
