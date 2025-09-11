@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Collections;
 
 
 public class GameManage : MonoBehaviour
@@ -12,7 +13,7 @@ public class GameManage : MonoBehaviour
     private int _puntos;
 
     [SerializeField]
-    private float _tiempo = 60f;
+    private float _tiempo = 60;
 
     [SerializeField]
     private int _tiempoEntero;
@@ -48,16 +49,16 @@ public class GameManage : MonoBehaviour
     {
 
 
-        if (_tiempo > 0f)
+        if (_tiempo > 0)
         {
             _tiempo -= Time.deltaTime;
             _tiempoEntero = (int)_tiempo;
-            Debug.Log("Se acabó el tiempo!" + Mathf.CeilToInt(_tiempo));
-            tiempoText.text = "Tiempo: " + _tiempo;
+            tiempoText.text = "Tiempo: " + _tiempoEntero;
 
         }
         else 
         {
+            _tiempo = 0f;
             SceneManager.LoadScene(1);
         }
         if (_puntos >= 10 && Obstaculo != null)
@@ -96,7 +97,7 @@ public class GameManage : MonoBehaviour
     public void SumarTiempo(int cantidad)
     {
         _tiempo += cantidad;
-        tiempoText.text = "Tiempo: " + _tiempo;
+        //tiempoText.text = "Tiempo: " + _tiempo;
 
     }
 
@@ -116,6 +117,22 @@ public class GameManage : MonoBehaviour
         else
         {
             Debug.Log("Necesitas la llave para entrar.");
+        }
+    }
+
+    public void EstadoDelJuego(string estado)
+    {
+        switch (estado)
+        {
+            case "play":
+
+                break;
+            case "pause":
+                break;
+            case "ganaste":
+                break;
+            case "perdiste":
+                break;
         }
     }
 }
