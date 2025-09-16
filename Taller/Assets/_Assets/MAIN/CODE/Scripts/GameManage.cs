@@ -32,8 +32,8 @@ public class GameManage : MonoBehaviour
     private TMP_Text tiempoText;
     [SerializeField]
     private TMP_Text llavetext;
-    [SerializeField]
-    private TMP_Text mensajeFinaltext;
+
+
 
     void Start()
     {
@@ -41,7 +41,6 @@ public class GameManage : MonoBehaviour
         tiempoText.text = "Tiempo: " + _tiempo;
         puntosText.text = "Puntos: " + _puntos;
         llavetext.text = "Llave: " + _Llave;
-        mensajeFinaltext.text = "";
     }
 
    
@@ -111,7 +110,6 @@ public class GameManage : MonoBehaviour
     {
         if (_Llave)
         {
-            mensajeFinaltext.text = "¡GANASTE!";
             Time.timeScale = 0f; 
         }
         else
@@ -125,13 +123,21 @@ public class GameManage : MonoBehaviour
         switch (estado)
         {
             case "play":
-
+                Time.timeScale = 1;
+ 
                 break;
             case "pause":
+                Time.timeScale = 0;
+
                 break;
             case "ganaste":
+                SceneManager.LoadScene(1);
                 break;
             case "perdiste":
+                SceneManager.LoadScene(2); 
+                break;
+            case "salir":
+
                 break;
         }
     }
