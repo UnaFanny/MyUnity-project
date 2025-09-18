@@ -141,4 +141,12 @@ public class GameManage : MonoBehaviour
                 break;
         }
     }
+
+    public void EstadoDelJugador(string estado)
+    {
+      
+
+    }
+
+
 }
