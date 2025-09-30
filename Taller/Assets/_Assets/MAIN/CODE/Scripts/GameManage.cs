@@ -24,6 +24,9 @@ public class GameManage : MonoBehaviour
     [SerializeField]
     private bool _Llave = false;
 
+    [SerializeField] 
+    private GameObject panelMenu;
+
     [SerializeField]
     private TMP_Text puntosText;
     [SerializeField]
@@ -39,7 +42,7 @@ public class GameManage : MonoBehaviour
     {
         vidaText.text = "Vida: " + _vida;
         tiempoText.text = "Tiempo: " + _tiempo;
-        puntosText.text = "Puntos: " + _puntos;
+        puntosText.text = " x " + _puntos;
         llavetext.text = "Llave: " + _Llave;
     }
 
@@ -58,7 +61,7 @@ public class GameManage : MonoBehaviour
         else 
         {
             _tiempo = 0f;
-            SceneManager.LoadScene(1);
+            EstadoDelJuego("perdiste");
         }
         if (_puntos >= 10 && Obstaculo != null)
         {
@@ -66,11 +69,16 @@ public class GameManage : MonoBehaviour
             Obstaculo = null;
 
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            EstadoDelJuego("pause");
+            panelMenu.SetActive(true);
+        }
     }
     public void SumarPuntos(int cantidad)
     {
         _puntos += cantidad;
-        puntosText.text = "Puntos: " + _puntos;
+        puntosText.text = " x " + _puntos;
     }
 
 
@@ -79,7 +87,7 @@ public class GameManage : MonoBehaviour
     {
         if (_vida <= 0)
         {
-            SceneManager.LoadScene(1);
+            EstadoDelJuego("perdiste");
         }
         else
         {
@@ -110,42 +118,37 @@ public class GameManage : MonoBehaviour
     {
         if (_Llave)
         {
-            Time.timeScale = 0f; 
+            EstadoDelJuego("ganaste");
         }
         else
         {
             Debug.Log("Necesitas la llave para entrar.");
         }
     }
-
+   
     public void EstadoDelJuego(string estado)
     {
         switch (estado)
         {
             case "play":
                 Time.timeScale = 1;
- 
+                panelMenu.SetActive(true);
+
                 break;
             case "pause":
                 Time.timeScale = 0;
-
+                panelMenu.SetActive(false);
                 break;
             case "ganaste":
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(2);
                 break;
             case "perdiste":
-                SceneManager.LoadScene(2); 
+                SceneManager.LoadScene(3); 
                 break;
             case "salir":
-
+                Application.Quit();
                 break;
         }
-    }
-
-    public void EstadoDelJugador(string estado)
-    {
-      
-
     }
 
 
