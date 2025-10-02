@@ -36,7 +36,8 @@ public class GameManage : MonoBehaviour
     [SerializeField]
     private TMP_Text llavetext;
 
-
+    [SerializeField]
+    private UIManager uiManager;
 
     void Start()
     {
@@ -92,7 +93,9 @@ public class GameManage : MonoBehaviour
         else
         {
             _vida -= cantidad;
-            vidaText.text = "Vida: " + _vida;
+            uiManager.spritesCorazon;
+
+
         }
     }
 
@@ -104,7 +107,6 @@ public class GameManage : MonoBehaviour
     public void SumarTiempo(int cantidad)
     {
         _tiempo += cantidad;
-        //tiempoText.text = "Tiempo: " + _tiempo;
 
     }
 

@@ -3690,6 +3690,69 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.5, y: 0.90625}
   m_EdgeRadius: 0
+--- !u!1 &479109324
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 479109326}
+  - component: {fileID: 479109325}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &479109325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479109324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf2d008f7af0b274ca35919fd5ddeb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tituloText: {fileID: 0}
+  alertasText: {fileID: 0}
+  respuestaInput: {fileID: 0}
+  enviarButton: {fileID: 0}
+  edad: 0
+  spritesCorazon:
+  - {fileID: 1948637705}
+  - {fileID: 1543065435}
+  - {fileID: 1957770672}
+  - {fileID: 969061493}
+  - {fileID: 1201479134}
+  _vida: 5
+  _puntos: 0
+  _tiempo: 60
+  _Llave: 0
+  puntosText: {fileID: 517906308}
+  vidaText: {fileID: 1886279958}
+  tiempoText: {fileID: 1365077333}
+  llavetext: {fileID: 18620285}
+--- !u!4 &479109326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479109324}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 34.7884, y: 173.53996, z: -16.055841}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &501493067
 GameObject:
   m_ObjectHideFlags: 0
@@ -8422,7 +8485,7 @@ GameObject:
   - component: {fileID: 969061494}
   - component: {fileID: 969061493}
   m_Layer: 5
-  m_Name: Image (3)
+  m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9669,7 +9732,7 @@ GameObject:
   - component: {fileID: 1201479135}
   - component: {fileID: 1201479134}
   m_Layer: 5
-  m_Name: Image (4)
+  m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11579,7 +11642,7 @@ GameObject:
   - component: {fileID: 1543065436}
   - component: {fileID: 1543065435}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28800,7 +28863,7 @@ GameObject:
   - component: {fileID: 1948637706}
   - component: {fileID: 1948637705}
   m_Layer: 5
-  m_Name: Image
+  m_Name: 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28875,7 +28938,7 @@ GameObject:
   - component: {fileID: 1957770673}
   - component: {fileID: 1957770672}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30026,3 +30089,4 @@ SceneRoots:
   - {fileID: 1911829213}
   - {fileID: 967503522}
   - {fileID: 83143875}
+  - {fileID: 479109326}
