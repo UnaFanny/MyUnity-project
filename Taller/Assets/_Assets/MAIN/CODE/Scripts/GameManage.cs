@@ -41,10 +41,10 @@ public class GameManage : MonoBehaviour
 
     void Start()
     {
-        vidaText.text = "Vida: " + _vida;
+        
         tiempoText.text = "Tiempo: " + _tiempo;
         puntosText.text = " x " + _puntos;
-        llavetext.text = "Llave: " + _Llave;
+       
     }
 
    
@@ -93,7 +93,7 @@ public class GameManage : MonoBehaviour
         else
         {
             _vida -= cantidad;
-            uiManager.spritesCorazon;
+            uiManager.ActualizarCorazones(_vida);
 
 
         }
@@ -102,7 +102,12 @@ public class GameManage : MonoBehaviour
           public void SumarVidas(int cantidad)
     {
         _vida += cantidad;
-        vidaText.text = "Vida: " + _vida;
+        uiManager.ActualizarCorazones(_vida);
+        if (_vida > 5)
+        {
+            _vida = 5;
+        }
+
     }
     public void SumarTiempo(int cantidad)
     {
@@ -113,7 +118,7 @@ public class GameManage : MonoBehaviour
     public void TomarLlave()
     {
         _Llave = true;
-        llavetext.text = "Llave: " + _Llave;
+        uiManager.ActualizarImagenLlave(_Llave);
 
     }
     public void LlegarAPuerta()

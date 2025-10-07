@@ -32,16 +32,13 @@ public class UIManager : MonoBehaviour
 
     [SerializeField]
     private bool _Llave = false;
-
-
     [SerializeField]
     private TMP_Text puntosText;
     [SerializeField]
-    private TMP_Text vidaText;
-    [SerializeField]
     private TMP_Text tiempoText;
     [SerializeField]
-    private TMP_Text llavetext;
+    private Image imagenLlave;
+
 
 
 
@@ -50,18 +47,31 @@ public class UIManager : MonoBehaviour
     int vida = 5;
     private void Start()
     {
-        vidaText.text = "Vida: " + _vida;
         tiempoText.text = "Tiempo: " + _tiempo;
         puntosText.text = " x " + _puntos;
-        llavetext.text = "Llave: " + _Llave;
         tituloText.text = "Hola, introduce tu edad";
         alertasText.text = "";
         enviarButton.onClick.AddListener(FuncionDelBoton);
+        imagenLlave.gameObject.SetActive(false);
 
-        for (int i = 0; i < 4; i++)
+    }
+    public void ActualizarCorazones(int vidasActuales)
+    {
+        for (int i = 0; i < spritesCorazon.Length; i++)
         {
-            spritesCorazon[i].enabled = false;
+            if (i < vidasActuales)
+            {
+                spritesCorazon[i].enabled = true; 
+            }
+            else
+            {
+                spritesCorazon[i].enabled = false; 
+            }
         }
+    }
+    public void ActualizarImagenLlave(bool tieneLlave)
+    {
+        imagenLlave.gameObject.SetActive(tieneLlave);
     }
     public void FuncionDelBoton()
     {
